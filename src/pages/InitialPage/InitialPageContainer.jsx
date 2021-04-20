@@ -1,7 +1,10 @@
 import React from 'react';
+import InitialPage from './InitialPage';
 
 const InitialPageContainer = () => {
-  return <div>Привет</div>
+  return (
+    <InitialPage />
+  )
 }
 
 export default InitialPageContainer;

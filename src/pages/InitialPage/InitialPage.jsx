@@ -1,7 +1,11 @@
 import React from 'react';
+import MyFeeds from '../../components/InitialPage/MyFeeds';
 
-const InitialPageContainer = () => {
-  return <div>Привет</div>
+
+const InitialPage = () => {
+  return (
+    <MyFeeds />
+  )
 }
 
-export default InitialPageContainer;
+export default InitialPage;
