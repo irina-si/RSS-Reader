@@ -25,7 +25,7 @@ export const feedFetchRequestedActionCreator = (feedURL) => {
     return {
         type: FEED_FETCH_REQUESTED,
         feedURL
-    }
+    };
 }
 
 export const setCategoriesActionCreator = (data) => {
