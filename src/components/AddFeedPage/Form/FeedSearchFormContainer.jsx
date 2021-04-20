@@ -1,13 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { feedFetchRequestedActionCreator } from '../../../redux/reducers/CurrentAddFeedReducer';
+import { loadFeedRequest } from '../../../redux/actions/addFeed';
 import FeedSearchForm from './FeedSearchForm';
 
-function FeedSearchFormContainer(props) {
-  const makeFetch = (url) => props.dispatch(feedFetchRequestedActionCreator(url));
+const FeedSearchFormContainer = ({fetchData}) => {
+  const makeFetch = (url) => {
+    fetchData(url);
+  }
+
   return (
     <FeedSearchForm makeFetch={makeFetch} />
   )
 }
 
-export default connect()(FeedSearchFormContainer);
+const mapDispatchToProps = {
+  fetchData: loadFeedRequest
+}
+
+
+
+export default connect(null, mapDispatchToProps)(FeedSearchFormContainer);

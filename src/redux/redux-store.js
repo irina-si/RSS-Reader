@@ -1,20 +1,18 @@
-import userFeedReducer from "./reducers/UserFeedReducer";
-import addFeedPageReducer from "./reducers/CurrentAddFeedReducer";
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
-import createSagaMiddleware from 'redux-saga';
-import mySaga from './saga/saga';
+import { createStore, applyMiddleware, compose } from "redux";
+import createSagaMiddleware from "redux-saga";
+import rootSaga from "./saga/rootSaga";
+import rootReducer from "./reducers/rootReducer";
 
 const sagaMiddleware = createSagaMiddleware();
 
-let reducers = combineReducers({
-  userFeed: userFeedReducer,
-  addFeedPage: addFeedPageReducer,
-});
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  : compose;
 
-let store = createStore(reducers, compose(
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(sagaMiddleware)
-));
+let store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+);
 
-sagaMiddleware.run(mySaga);
+sagaMiddleware.run(rootSaga);
 export default store;
