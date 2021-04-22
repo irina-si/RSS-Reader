@@ -1,21 +1,31 @@
 import React from 'react';
 import AddFeedPage from './AddFeedPage';
 import {connect} from 'react-redux';
+import { changeCategoryPage } from './../../redux/actions/addFeed';
+import { addFeedToUserList } from './../../redux/actions/userFeed';
 
 const AddFeedPageContainer = (props) => {
   return (
-    <AddFeedPage categories={props.categories}/>
+    <AddFeedPage {...props}/>
   );
 }
 
 const mapStateToProps = state => {
   return {
-    categories: state.addFeedPage.categories
+    feedId: state.addFeedPage.feedId,
+    feedName: state.addFeedPage.feedName,
+    feedLink: state.addFeedPage.feedLink,
+    categories: state.addFeedPage.categories,
+    currentCategories: state.addFeedPage.currentCategories,
+    totalCategoriesCount: state.addFeedPage.totalCategories,
+    pageSize: state.addFeedPage.pageSize,
+    currentPage: state.addFeedPage.currentPage,
   };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {};
+const mapDispatchToProps =  {
+    changeCategoryPage,
+    addFeedToUserList,
 }
 
 

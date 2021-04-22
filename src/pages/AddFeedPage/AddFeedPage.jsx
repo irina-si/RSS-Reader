@@ -1,12 +1,12 @@
 import React from 'react';
 import CategoriesList from '../../components/AddFeedPage/CategoriesList';
-import FeedSearchFormContainer from '../../components/AddFeedPage/Form/FeedSearchFormContainer';
+import FeedSearchForm from '../../components/AddFeedPage/Form';
 
 const AddFeedPage = (props) => {
   return (
     <div>
-      <FeedSearchFormContainer />
-      {props.categories && <CategoriesList categories={props.categories}/>}
+      <FeedSearchForm />
+      {props.currentCategories && <CategoriesList {...props}/>}
     </div>
   );
 }

@@ -2,11 +2,7 @@ const ADD_FEED = 'ADD_FEED';
 
 let initialState = {
     feeds: [
-        {
-            feedId: 0,
-            feedName: '',
-            categories: [],
-        }
+        
     ]
 }
 
@@ -17,9 +13,10 @@ const userFeedReducer = (state = initialState, action) => {
                 feeds: [
                     ...state.feeds,
                     {
-                        feedId: 1,
-                        feedName: action.name,
-                        categories: [],
+                        feedId: action.feedId,
+                        feedName: action.feedTitle,
+                        feedLink: action.feedLink, 
+                        categories: [...action.categories],
                     }
                 ]
             }
@@ -29,8 +26,3 @@ const userFeedReducer = (state = initialState, action) => {
 
 export default userFeedReducer
 
-export const addFeedActionCreator = () => {
-    return {
-        type: ADD_FEED,
-    }
-}
