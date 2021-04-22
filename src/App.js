@@ -9,22 +9,22 @@ import FullNewsPageContainer from "./pages/FullNewsPage/FullNewsPageContainer";
 import NewsPageContainer from "./pages/NewsPage/NewsPageContainer";
 
 function App(props) {
-  return (
-    <Router>
-      <div className="app-wrapper">
-        <HeaderContainer />
-        <div className="app-wrapper-content">
-          <Switch>
-            <Route exact path="/" component={InitialPageContainer} />
-            <Route path="/add-feed" component={AddFeedPage} />
-            <Route path="/" component={EditFolderPageContainer} />
-            <Route path="/" component={FullNewsPageContainer} />
-            <Route path="/" component={NewsPageContainer} />
-          </Switch>
-        </div>
-      </div>
-    </Router>
-  );
+	return (
+		<Router>
+			<div className='app-wrapper'>
+				<HeaderContainer />
+				<div className='app-wrapper-content'>
+					<Switch>
+						<Route exact path='/' component={InitialPageContainer} />
+						<Route path='/add-feed' component={AddFeedPage} />
+						<Route path='/' component={EditFolderPageContainer} />
+						<Route path='/' component={FullNewsPageContainer} />
+						<Route path='/' component={NewsPageContainer} />
+					</Switch>
+				</div>
+			</div>
+		</Router>
+	);
 }
 
 export default App;

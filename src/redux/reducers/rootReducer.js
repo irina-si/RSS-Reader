@@ -4,6 +4,6 @@ import addFeedPage from "./addFeedPage";
 import userFeed from "./userFeed";
 
 export default combineReducers({
-  userFeed,
-  addFeedPage,
+	userFeed,
+	addFeedPage,
 });

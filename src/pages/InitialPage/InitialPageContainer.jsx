@@ -1,10 +1,6 @@
-import React from 'react';
-import InitialPage from './InitialPage';
+import React from "react";
+import InitialPage from "./InitialPage";
 
-const InitialPageContainer = () => {
-  return (
-    <InitialPage />
-  )
-}
+const InitialPageContainer = () => <InitialPage />;
 
 export default InitialPageContainer;

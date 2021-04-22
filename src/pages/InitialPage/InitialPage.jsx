@@ -1,11 +1,8 @@
-import React from 'react';
-import MyFeeds from '../../components/InitialPage/MyFeeds';
-
+import React from "react";
+import MyFeeds from "../../components/InitialPage/MyFeeds";
 
 const InitialPage = () => {
-  return (
-    <MyFeeds />
-  )
-}
+	return <MyFeeds />;
+};
 
 export default InitialPage;

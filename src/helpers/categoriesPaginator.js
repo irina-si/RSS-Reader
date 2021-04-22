@@ -1,5 +1,5 @@
-const paginate = (array, page_size, page_number) => {
-  return array.slice((page_number - 1) * page_size, page_number * page_size);
-}
+const paginate = (array, pageSize, pageNumber) => {
+	return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+};
 
 export default paginate;
