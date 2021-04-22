@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import CategoriesList from "../../components/AddFeedPage/CategoriesList";
+import FeedSearchForm from "../../components/AddFeedPage/Form";
 
-const AddFeedPageContainer = () => {
+const AddFeedPage = (props) => (
+	<div>
+		<FeedSearchForm />
+		{props.currentCategories && <CategoriesList {...props} />}
+	</div>
+);
 
-}
-
-export default AddFeedPageContainer;
+export default AddFeedPage;

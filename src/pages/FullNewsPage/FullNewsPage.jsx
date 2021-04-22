@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const FullNewsPageContainer = () => {
-
-}
+const FullNewsPageContainer = () => {};
 
 export default FullNewsPageContainer;

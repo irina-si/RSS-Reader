@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const NewsPageContainer = () => {
+const NewsPage = () => {};
 
-}
-
-export default NewsPageContainer;
+export default NewsPage;

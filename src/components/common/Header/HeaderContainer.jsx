@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const HeaderContainer = () => {
-  return <div>Заголовок</div>
-}
+const HeaderContainer = () => <div>Заголовок</div>;
 
 export default HeaderContainer;
