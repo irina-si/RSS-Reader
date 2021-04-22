@@ -1,4 +1,4 @@
-const ADD_FEED = 'ADD_FEED';
+import {ADD_FEED_TO_USER_LIST} from './../actions/types'
 
 let initialState = {
     feeds: [
@@ -8,7 +8,8 @@ let initialState = {
 
 const userFeedReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_FEED:
+        case ADD_FEED_TO_USER_LIST:
+            console.log(action);
             return {
                 feeds: [
                     ...state.feeds,
@@ -17,6 +18,7 @@ const userFeedReducer = (state = initialState, action) => {
                         feedName: action.feedTitle,
                         feedLink: action.feedLink, 
                         categories: [...action.categories],
+                        feedImage: action.feedImage,
                     }
                 ]
             }

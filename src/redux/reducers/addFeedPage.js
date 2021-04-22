@@ -1,22 +1,20 @@
 import { SET_CATEGORIES, 
         SET_PAGE, 
         SET_TOTAL_CATEGORIES_COUNT,
-        SET_CURRENT_CATEGORIES_ARRAY,
-        SET_CURRENT_CATEGORIES_PAGE
+        SET_CURRENT_CATEGORIES_PAGE,
+        CLEAR_CATEGORIES
       } from "../actions/types";
-
-import paginator from './../../helpers/categoriesPaginator';
 
 let initialState = {
   feedId: 0,
   feedName: "",
+  feedImage: "",
   feedLink: "",
   categories: [],
   currentCategories: [],
   totalCategories: 0,
   pageSize: 10,
   currentPage: 1,
-  searchTitle: '',
 };
 
 const addFeedPageReducer = (state = initialState, action) => {
@@ -27,6 +25,7 @@ const addFeedPageReducer = (state = initialState, action) => {
         feedName: action.title,
         feedLink: action.link,
         categories: [...action.categories],
+        feedImage: action.image
       };
     case SET_PAGE:
       return {
@@ -38,16 +37,14 @@ const addFeedPageReducer = (state = initialState, action) => {
         ...state,
         totalCategories: action.count
       };
-    case SET_CURRENT_CATEGORIES_ARRAY:
-      const currentCategoriesArray = paginator(state.categories, state.pageSize, action.pageNum);
-      return {
-        ...state,
-        currentCategories: currentCategoriesArray
-      };
     case SET_CURRENT_CATEGORIES_PAGE:
       return {
         ...state,
         currentPage: action.pageNum,
+      };
+    case CLEAR_CATEGORIES:
+      return {
+        ...initialState
       };
     default:
       return state;

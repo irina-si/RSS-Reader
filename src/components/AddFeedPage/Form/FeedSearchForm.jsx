@@ -30,6 +30,7 @@ const FeedSearchForm = (props) => {
     },
     onSubmit: (values, {setSubmitting}) => {
       props.makeFetch(values.feedURL);
+      values.feedURL = '';
       setSubmitting(false);
     },
     validate: feedSearchFormValidate,

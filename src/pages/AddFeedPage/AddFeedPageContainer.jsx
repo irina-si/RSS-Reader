@@ -1,8 +1,9 @@
 import React from 'react';
 import AddFeedPage from './AddFeedPage';
 import {connect} from 'react-redux';
-import { changeCategoryPage } from './../../redux/actions/addFeed';
+import { changeCategoryPage, clearCategories } from './../../redux/actions/addFeed';
 import { addFeedToUserList } from './../../redux/actions/userFeed';
+import { selectCurrentCategories } from './../../redux/selectors';
 
 const AddFeedPageContainer = (props) => {
   return (
@@ -15,8 +16,9 @@ const mapStateToProps = state => {
     feedId: state.addFeedPage.feedId,
     feedName: state.addFeedPage.feedName,
     feedLink: state.addFeedPage.feedLink,
+    feedImage: state.addFeedPage.feedImage,
     categories: state.addFeedPage.categories,
-    currentCategories: state.addFeedPage.currentCategories,
+    currentCategories: selectCurrentCategories(state),
     totalCategoriesCount: state.addFeedPage.totalCategories,
     pageSize: state.addFeedPage.pageSize,
     currentPage: state.addFeedPage.currentPage,
@@ -26,6 +28,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps =  {
     changeCategoryPage,
     addFeedToUserList,
+    clearCategories
 }
 
 

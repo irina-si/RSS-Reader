@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Checkbox, IconButton, List, ListItem, ListItemIcon, ListItemSecondaryAction, ListItemText } from '@material-ui/core';
 import './CategoriesList.scss';
 
 export default function CategoriesList(props) {
   const [checked, setChecked] = useState([]);
-  // useEffect(() => {
-  //   props.changeCategoryPage(1);
-  // }, []);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -29,9 +26,11 @@ export default function CategoriesList(props) {
       feedId: props.feedId,
       feedTitle: props.feedName,
       feedLink: props.feedLink,
-      categories: [...checked]
+      categories: [...checked],
+      feedImage: props.feedImage,
     }
     props.addFeedToUserList(currentFeedObj);
+    props.clearCategories();
   }
 
   const pagesCount = Math.ceil(props.totalCategoriesCount / props.pageSize);
@@ -41,7 +40,7 @@ export default function CategoriesList(props) {
     }
 
   return (<div>
-    <div className='selectPageMenu'>
+    <div className="selectPageMenu">
        {pages.map( (num) => {
            return <span className={props.currentPage === num ? 'selectedPage' : ''}
                   onClick={() => onPageChange(num)}>
