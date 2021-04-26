@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import paginator from "./../../helpers/categoriesPaginator";
+import { paginate } from "./../../helpers/objectHelpers";
 
 export const selectAllCategories = (state) => state.addFeedPage.categories;
 export const selectCurrenPageNum = (state) => state.addFeedPage.currentPage;
@@ -9,5 +9,5 @@ export const selectCurrentCategories = createSelector(
 	selectCurrenPageNum,
 	selectPageSize,
 	(allCategories, pageNum, selectPageSize) =>
-		paginator(allCategories, selectPageSize, pageNum)
+		paginate(allCategories, selectPageSize, pageNum)
 );

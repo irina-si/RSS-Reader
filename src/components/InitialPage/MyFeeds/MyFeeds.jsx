@@ -1,5 +1,5 @@
 import React from "react";
-import AddButton from "../common/AddButton/AddButton";
+import AddButton from "./../../common/AddButton/AddButton";
 import "./MyFeeds.scss";
 
 const MyFeeds = () => (
