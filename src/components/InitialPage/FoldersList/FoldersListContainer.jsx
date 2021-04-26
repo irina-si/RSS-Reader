@@ -8,14 +8,12 @@ import { createFolder, deleteFolder } from "./../../../redux/actions/folders";
 
 import "./FolderList.scss";
 
-const FoldersListContainer = (props) => {
-	return (
-		<div className='folderList-container'>
-			<AddFolderButton createFolder={props.createFolder} />
-			<FoldersList {...props} />
-		</div>
-	);
-};
+const FoldersListContainer = (props) => (
+	<div className='folderList-container'>
+		<AddFolderButton createFolder={props.createFolder} />
+		<FoldersList {...props} />
+	</div>
+);
 
 const mapStateToProps = (state) => ({
 	folders: state.folders.folders,

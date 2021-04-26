@@ -11,13 +11,11 @@ const FolderList = (props) => {
 				<div>No folders yet</div>
 			) : (
 				<List className='folderList'>
-					{folders.map((f) => {
-						return (
-							<ListItem>
-								<FolderCard folder={f} deleteFolder={deleteFolder} />
-							</ListItem>
-						);
-					})}
+					{folders.map((f) => (
+						<ListItem>
+							<FolderCard folder={f} deleteFolder={deleteFolder} />
+						</ListItem>
+					))}
 				</List>
 			)}
 		</div>

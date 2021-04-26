@@ -7,7 +7,7 @@ import FeedSearchForm from "../../components/AddFeedPage/Form";
 const AddFeedPage = (props) => (
 	<div>
 		<Button color='primary' component={Link} to='/'>
-			На главную
+			To Home Page
 		</Button>
 		<FeedSearchForm />
 		{props.currentCategories && <CategoriesList {...props} />}
