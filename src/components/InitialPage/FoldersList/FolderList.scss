@@ -1,0 +1,24 @@
+.folderList-container {
+  display: flex;
+}
+
+.folderList {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+}
+
+.folder-card {
+  width: 150px;
+  height: auto;
+}
+
+.card-action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+}

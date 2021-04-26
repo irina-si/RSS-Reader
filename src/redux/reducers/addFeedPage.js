@@ -1,3 +1,4 @@
+import generateNewId from "../../helpers/newid";
 import {
 	SET_CATEGORIES,
 	SET_PAGE,
@@ -22,6 +23,7 @@ const addFeedPageReducer = (state = initialState, action) => {
 		case SET_CATEGORIES:
 			return {
 				...state,
+				feedId: generateNewId(),
 				feedName: action.title,
 				feedLink: action.link,
 				categories: [...action.categories],

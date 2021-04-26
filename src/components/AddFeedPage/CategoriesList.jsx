@@ -12,18 +12,7 @@ import {
 import "./CategoriesList.scss";
 
 export default function CategoriesList(props) {
-	const {
-		changeCategoryPage,
-		feedId,
-		feedLink,
-		feedName,
-		feedImage,
-		addFeedToUserList,
-		clearCategories,
-		totalCategoriesCount,
-		pageSize,
-		currentPage,
-	} = props;
+	const { changeCategoryPage, feedId, feedLink, feedName, feedImage } = props;
 
 	const [checked, setChecked] = useState([]);
 

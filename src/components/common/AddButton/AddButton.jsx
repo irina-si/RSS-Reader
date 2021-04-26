@@ -1,13 +1,13 @@
 import React from "react";
-import addButtonImg from "../../../assets/plus-add.png";
 import "./AddButton.scss";
-import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import { Link } from "react-router-dom";
 
 const AddButton = () => (
-	<Button color='primary' component={Link} to='/add-feed'>
-		<img src={addButtonImg} alt='add button' />
-	</Button>
+	<IconButton color='primary' component={Link} to='/add-feed'>
+		<AddCircleOutlineIcon />
+	</IconButton>
 );
 
 export default AddButton;
